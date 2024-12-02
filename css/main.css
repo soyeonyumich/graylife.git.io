@@ -11,11 +11,13 @@ body {
   height: 1024px;
 }
 
-.container {
+.image-container {
   position: relative;
+  width: 80%; /* Original width for desktop */
+  height: auto; /* Maintain aspect ratio */
+  margin: 0 auto; /* Center horizontally */
 }
 
-/* General Styling for All Images */
 .v1034_8778, .v1034_8760, .v873_3135, .v1034_8754, 
 .v1034_8781, .v1034_8769, .v1034_8775, .v1034_8757, 
 .v1034_8751, .v1034_8766, .v1034_8763 {
@@ -26,7 +28,7 @@ body {
   cursor: pointer;
 }
 
-/* Specific Positions and Sizes */
+
 .v1034_8778 {
   width: 300px;
   height: 200px;
@@ -113,4 +115,22 @@ body {
   top: 673px;
   left: 649px;
   background-image: url("../images/v1034_8763.png");
+}
+@media only screen and (max-width: 768px) {
+  .image-container {
+    position: relative;
+    width: 95%; /* Make the group slightly bigger */
+    max-width: 600px; /* Increase the maximum width for larger size */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0; /* Remove horizontal centering */
+    transform: translateX(-10%); /* Move the entire group to the left */
+  }
+
+  .v1034_8778, .v1034_8760, .v873_3135, .v1034_8754, 
+  .v1034_8781, .v1034_8769, .v1034_8775, .v1034_8757, 
+  .v1034_8751, .v1034_8766, .v1034_8763 {
+    position: absolute; /* Keep individual images relative to parent */
+    background-size: contain; /* Scale each image properly */
+    background-position: center;
+  }
 }
